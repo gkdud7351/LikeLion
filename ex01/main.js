@@ -127,3 +127,74 @@
     files: [first],
   } = notice;
 }
+{
+  let arr = [1, 2, 3];
+  function resultPush() {
+    console.log(arr.push(4, 5, 6));
+  }
+  resultPush();
+  console.log(arr);
+
+  function resultPop() {
+    console.log(arr.pop());
+  }
+  resultPop();
+  console.log(arr);
+
+  function resultShift() {
+    console.log(arr.shift());
+  }
+  resultShift();
+  console.log(arr);
+
+  function resultUnshift() {
+    console.log(arr.unshift(7));
+  }
+  resultUnshift();
+  console.log(arr);
+}
+{
+  class User {
+    constructor() {
+      // function User() {} 역할
+      this.firstName = first;
+      this.lastName = last;
+    }
+    getFullName() {
+      //User.prototype 생략
+      return `${this.firstName} ${this.lastName}`;
+    }
+  }
+}
+// {
+//   const heropy = new User("Heropy", "Park");
+//   const neo = new User("Neo", "Anderson");
+
+//   console.log(heropy);
+//   console.log(neo);
+// }
+// {
+//   class A {
+//     constructor() {}
+//   }
+//   class B extends A {
+//     constructor() {
+//       super();
+//     }
+//   }
+
+//   // A클래스는 B의 부모 클래스이고
+//   // B클래스는 C의 부모클래스이고
+//   // a는 A클래스, b는 B클래스, c는 C클래스의 인스턴트일 때
+//   console.log(c instanceof A); // true
+//   console.log(c instanceof B); // true
+//   console.log(c instanceof C); // true
+
+//   console.log(c.constructor === A); // false
+//   console.log(c.constructor === B); // false
+//   console.log(c.constructor === B); // true
+// }
+{
+  const d1 = new Date(2025, 1, 4, 16, 20, 30);
+  console.log(d1);
+}

@@ -1,7 +1,7 @@
 //import { readFile } from "node:fs";
 const fs = require("fs");
 
-// 비동기기
+// 비동기
 // fs.readFile("data.txt", (err, data) => {
 //   if (err) throw err;
 //   console.log(data.toString());
