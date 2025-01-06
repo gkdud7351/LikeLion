@@ -198,3 +198,33 @@
   const d1 = new Date(2025, 1, 4, 16, 20, 30);
   console.log(d1);
 }
+{
+  const arr = ["A", "B", "C"];
+  arr.splice(2, 0, "X"); // 인덱스 2번 자리, 제거 개수 0, 추가할 아이템
+  console.log(arr); //['A','B','X','C']
+}
+{
+  const target = { a: 1, b: 2 };
+  const source1 = { b: 3, c: 4 };
+  const source2 = { c: 5, d: 6 };
+  const result = Object.assign(target, source1, source2);
+  console.log(target); // {a:1,b:3,c:5,d:6}
+  console.log(result); // {a:1,b:3,c:5,d:6}
+}
+{
+  console.log(JSON.stringify("Hello world!"));
+  console.log(JSON.stringify(123));
+  console.log(JSON.stringify(false));
+  console.log(JSON.stringif(null));
+  console.log(JSON.stringif({ name: "hy", age: 12 }));
+  console.log(JSON.stringif([1, 2, 3]));
+
+  console.log("//--------------------------------//");
+
+  console.log(JSON.parse('"Hello world!'));
+  console.log(JSON.parse("123"));
+  console.log(JSON.parse("false"));
+  console.log(JSON.parse("null"));
+  console.log(JSON.parse('{"name":"hy","age":12}'));
+  console.log(JSON.parse("[1,2,3]"));
+}
