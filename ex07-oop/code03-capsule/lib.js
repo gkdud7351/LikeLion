@@ -1,7 +1,10 @@
 import readlineSync from "readline-sync";
-import { add, getList, size } from "./exams-service.js";
+// import { add, getList, size } from "./exams-service.js";
+import Exam from "./exam.js";
+import ExamService from "./exams-service.js";
+const service = new ExamService();
 
-let exams = []; //성적데이터터
+let exams = []; //성적데이터
 
 export const printHeader = () => {
   console.log(`=====성적 관리 프로그램=====`);
@@ -35,32 +38,33 @@ export const inputScore = () => {
   let math = readlineSync.question("math: ");
   math = parseInt(math);
   // exams.push({ kor, eng, math });
-  add({ kor, eng, math });
+  service.add(new Exam(kor, eng, math));
 };
 
 export const printScore = () => {
   console.clear();
-  let exams1 = getList(1, 3);
+  let exams = service.getList(1, 3);
   // let exams1 = exams.sort((a, b) => b.kor - a.kor).slice(0, 3);
   console.log("------------------------------------");
   console.log("                성적출력             ");
   console.log("------------------------------------");
-  console.log(`총인원: ${size()}명`);
+  console.log(`총인원: ${service.size()}명`);
   console.log("");
 
   // 평균을 기준으로 역순정렬
   // ??
 
   for (let i = 0; i < exams.length; i++) {
-    let { kor, eng, math } = exams[i];
+    let exam = exams[i];
+    let { kor, eng, math } = exam;
     // let kor = kors[i];
     // let eng = engs[i];
     // let math = maths[i];
 
     // 총점 계산
-    let total = total();
+    let total = exam.total();
     // 평균 계산
-    let avg = avg();
+    let avg = exam.avg();
 
     console.log(`num: ${i + 1}`);
     console.log(`kor: ${kor}`);

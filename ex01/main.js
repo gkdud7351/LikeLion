@@ -212,19 +212,19 @@
   console.log(result); // {a:1,b:3,c:5,d:6}
 }
 {
-  console.log(JSON.stringify("Hello world!"));
-  console.log(JSON.stringify(123));
-  console.log(JSON.stringify(false));
-  console.log(JSON.stringif(null));
-  console.log(JSON.stringif({ name: "hy", age: 12 }));
-  console.log(JSON.stringif([1, 2, 3]));
+  console.log(JSON.stringify("Hello world!")); // "Hello world!"
+  console.log(JSON.stringify(123)); // 문자(string)로 변환되어 출력 : 123
+  console.log(JSON.stringify(false)); // 문자(string)로 변환되어 출력 : false
+  console.log(JSON.stringif(null)); // 문자(string)로 변환되어 출력 : null
+  console.log(JSON.stringif({ name: "hy", age: 12 })); // 큰 따옴표 사용 : {"name":"hy","age":12}
+  console.log(JSON.stringif([1, 2, 3])); // 문자(string)로 변환되어 출력 : [1,2,3]
 
   console.log("//--------------------------------//");
 
-  console.log(JSON.parse('"Hello world!'));
-  console.log(JSON.parse("123"));
-  console.log(JSON.parse("false"));
-  console.log(JSON.parse("null"));
-  console.log(JSON.parse('{"name":"hy","age":12}'));
-  console.log(JSON.parse("[1,2,3]"));
+  console.log(JSON.parse('"Hello world!')); // JSON 문자는 큰 따옴표를 포함한 문자 덩어리임임 : Hello world!
+  console.log(JSON.parse("123")); // 숫자 데이터로 변환되어 출력 : 123
+  console.log(JSON.parse("false")); // 불린 데이터로 변환되어 출력 : false
+  console.log(JSON.parse("null")); // 널 데이터로 변환되어 출력 : null
+  console.log(JSON.parse('{"name":"hy","age":12}')); // 객체 데이터로 변환되어 출력 : { name: "hy", age: 12 }
+  console.log(JSON.parse("[1,2,3]")); // 배열 데이터로 변환되어 출력 : [1,2,3]
 }

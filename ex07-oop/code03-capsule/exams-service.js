@@ -4,16 +4,37 @@
 exam 데이터를 직접 다루는 코드를 추가해보기로 하자.
 
 */
+export default class ExamService {
+  #exams = [];
 
-let exams = [];
+  constructor() {
+    // this.exams = [];
+  }
+  add(exam) {
+    this.#exams.push(exam);
+  }
+  getList(page = 1, size = 3) {
+    let exams = this.#exams.sort((a, b) => b.total() - a.total()).slice(0, 3);
+    return exams;
+  }
+  size() {
+    return this.#exams.length;
+  }
+}
+// let exams = [];
 
-export const add = (exam) => {
-  exams.push(exam);
-};
+// export const add = (exam) => {
+//   exams.push(exam);
+// };
 
-export const getList = (page = 1, size = 3) => {
-  let exams1 = exams.sort((a, b) => b.kor - a.kor).slice(0, 3);
-  return exams1;
-};
+// export const getList = (page = 1, size = 3) => {
+//   let exams1 = exams.sort((a, b) => b.kor - a.kor).slice(0, 3);
+//   return exams1;
+// };
 
-export const size = () => exams.length;
+// export const size = () => exams.length;
+//
+// 위의 코드를 이용해서 ExamService 캡슐 작성
+// ExamService으ㅢ 서비스 함수는 add,getList,size 3개
+// 내부적으로 사용하는 속성은 Exam 객체를 담을 수 있는 배열
+// 배열 명은 exams
