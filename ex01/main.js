@@ -260,3 +260,72 @@
     });
   });
 }
+{
+  const a = () => {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        console.log(1);
+        resolve();
+      }, 1000);
+    });
+  };
+  const b = () => {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        console.log(2);
+        resolve();
+      }, 1000);
+    });
+  };
+  const c = () => {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        console.log(3);
+        resolve();
+      }, 1000);
+    });
+  };
+  const d = () => console.log(4);
+
+  a()
+    .then(() => b())
+    .then(() => c())
+    .then(() => {
+      d();
+    });
+}
+{
+  const getMovies = (movieName) => {
+    return new Promise((resolve) => {
+      fetch(`http://www.omdbapi.com/?apikey=7035c60c&s=${movieName}`)
+        .then((res) => res.json())
+        .then((res) => {
+          console.log(res);
+          resolve();
+        });
+    });
+  };
+  // getMovies("frozen")
+  //   .then(() => {
+  //     console.log("겨울왕국");
+  //     return getMovies("avengers");
+  //   })
+  //   .then(() => {
+  //     console.log("어벤져스");
+  //     return getMovies("avatar");
+  //   })
+  //   .then(() => {
+  //     console.log("아바타");
+  //   });
+
+  const wrap = async () => {
+    await getMovies("frozen");
+    console.log("겨울왕국");
+    await getMovies("avengers");
+    console.log("어벤져스");
+    await getMovies("avater");
+    console.log("아바타");
+  };
+
+  wrap();
+}
