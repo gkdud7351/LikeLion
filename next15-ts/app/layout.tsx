@@ -1,13 +1,11 @@
 import "newtil-css/dist/style.min.css";
-import "./globals.css";
-import Footer from "@/components/footer";
-import Header from "@/components/header";
+import "./global.css";
+import "./icons.css";
 
-import { ReactNode } from "react";
-
-const Layout = ({ children }: { children: ReactNode }) => {
+const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <html lang="ko">
+    // <!DOCTYPE html>
+    <html lang="en">
       <head>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -20,16 +18,10 @@ const Layout = ({ children }: { children: ReactNode }) => {
         />
       </head>
       <body>
-        <div>
-          <div>
-            <Header />
-          </div>
-          {children}
-          <Footer />
-        </div>
+        <div>{children}</div>
       </body>
     </html>
   );
 };
 
-export default Layout;
+export default RootLayout;

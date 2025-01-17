@@ -1,9 +1,10 @@
 import Link from "next/link";
-import styles from "./header.module.css";
+import styles from "./header.module.scss";
+
 const Header = () => {
   return (
     <header className={styles.header}>
-      <h1>
+      <h1 className={styles.h1}>
         <Link href="/">Rland</Link>
       </h1>
       <div className={styles["top-mobile-menu"]}>
@@ -26,7 +27,7 @@ const Header = () => {
             <li>
               <Link
                 className="n-icon n-icon:dashboard n-icon-color:base-1"
-                href="/admin/index.html"
+                href="/admin"
               >
                 대시보드
               </Link>
@@ -34,7 +35,7 @@ const Header = () => {
             <li>
               <Link
                 href="/signin.html"
-                className="n-icon n-icon:sign_in n-icon-color:base-1"
+                className="n-icon n-icon:login n-icon-color:base-1"
               >
                 로그인
               </Link>
@@ -42,14 +43,15 @@ const Header = () => {
           </ul>
         </nav>
         {/* <section>
-              <h1 class="d:none">로그아웃 폼</h1>
-              <form>
-                  <input type="hidden">
-                  <button class="n-icon n-icon:sign_out n-icon-color:base-1">로그아웃</button>
-              </form>
-          </section> */}
+          <h1 class="d:none">로그아웃 폼</h1>
+          <form>
+              <input type="hidden">
+              <button class="n-icon n-icon:sign_out n-icon-color:base-1">로그아웃</button>
+          </form>
+      </section> */}
       </div>
     </header>
   );
 };
+
 export default Header;

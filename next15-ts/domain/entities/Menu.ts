@@ -1,3 +1,5 @@
+import { MenuImage } from "./MenuImage";
+
 export interface Menu {
   id: number;
   korName: string;
@@ -6,4 +8,8 @@ export interface Menu {
   regDate: Date;
   categoryId: number;
   regMemberId: number;
+
+  // 자식으로 관계를 가지고 있는 객체 집합
+  // 1:n 이라서 배열
+  images: MenuImage[];
 }

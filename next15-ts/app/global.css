@@ -1,3 +1,5 @@
+/* @import url("https://cdn.jsdelivr.net/npm/newtil-css@0.2.5/dist/style.min.css"); */
+
 @font-face {
   font-family: "Pretendard-Regular";
   src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
@@ -33,7 +35,8 @@ html {
 }
 
 body {
-  font-family: "Pretendard-Regular", sans-serif;
+  /* font-family: "Pretendard-Regular", sans-serif; */
+  font-family: "Pretendard Variable", sans-serif;
   /* font-family: "Pretendard Variable", Pretendard, -apple-system,
     BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI",
     "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji",

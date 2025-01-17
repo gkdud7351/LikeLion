@@ -1,11 +1,11 @@
-import Link from "next/link";
+import styles from "./footer.module.scss";
 
-const Footer = () => {
+const RootFooter = () => {
   return (
-    <div className="footer-box">
-      <footer className="footer">
+    <div className={styles["footer-box"]}>
+      <footer className={styles["footer"]}>
         <h1>
-          <Link href="">홈페이지 이용약관</Link>
+          <a href="">홈페이지 이용약관</a>
         </h1>
         <dl>
           <div>
@@ -21,4 +21,5 @@ const Footer = () => {
     </div>
   );
 };
-export default Footer;
+
+export default RootFooter;
